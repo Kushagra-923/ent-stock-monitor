@@ -7,8 +7,7 @@ export async function getStockPrice(symbol) {
   try {
     const ticker = symbol.toUpperCase();
     // Ensure your backend server is running on port 5000
-    const res = await fetch(`http://localhost:5000/stock/${ticker}`);
-    
+const res = await fetch(`https://stock-backend-ua27.onrender.com/stock/${symbol}`);    
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
     
     const data = await res.json();
